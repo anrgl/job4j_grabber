@@ -4,6 +4,7 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import ru.job4j.utils.SqlRuDateConvertor;
 
 import java.io.IOException;
 
@@ -18,7 +19,7 @@ public class SqlRuParser {
             Element date = updated.get(i);
             System.out.println(href.attr("href"));
             System.out.println(href.text());
-            System.out.println(date.text());
+            System.out.println(SqlRuDateConvertor.convertor(date.text()));
         }
     }
 }
