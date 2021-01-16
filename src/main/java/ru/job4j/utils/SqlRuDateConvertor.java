@@ -22,9 +22,9 @@ public class SqlRuDateConvertor {
                 DateFormatSymbols dfs = DateFormatSymbols.getInstance(LOCALE);
                 dfs.setShortMonths(SHORT_MONTHS);
                 SimpleDateFormat format;
-                format = new SimpleDateFormat("d MMM yy, HH:mm", LOCALE);
+                format = new SimpleDateFormat("d MMM yy HH:mm", LOCALE);
                 format.setDateFormatSymbols(dfs);
-                date = format.parse(strDate);
+                date = format.parse(parseDate(strDate));
             }
         } catch (ParseException e) {
             e.printStackTrace();
@@ -33,7 +33,7 @@ public class SqlRuDateConvertor {
     }
 
     private static Date humanityToDate(String strDate) {
-        String[] dateParts = strDate.split(", ");
+        String[] dateParts = parseDate(strDate).split(" ");
         Calendar calendar = Calendar.getInstance(LOCALE);
         if (dateParts[0].equals("вчера")) {
             calendar.add(Calendar.DATE, -1);
@@ -44,5 +44,12 @@ public class SqlRuDateConvertor {
         calendar.set(Calendar.MINUTE, minutes);
         calendar.set(Calendar.SECOND, 0);
         return calendar.getTime();
+    }
+
+    private static String parseDate(String text) {
+        String[] splitedText = text.split(", ");
+        String date = splitedText[0];
+        String time = splitedText[1].split(" ")[0];
+        return date + " " + time;
     }
 }
