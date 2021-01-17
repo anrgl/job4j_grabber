@@ -4,8 +4,8 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-import ru.job4j.models.Post;
-import ru.job4j.utils.SqlRuDateConvertor;
+import ru.job4j.grabber.models.Post;
+import ru.job4j.grabber.utils.SqlRuDateConvertor;
 
 import java.io.IOException;
 import java.util.ArrayList;
