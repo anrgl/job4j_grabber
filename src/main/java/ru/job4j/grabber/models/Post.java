@@ -9,11 +9,30 @@ public class Post {
     private String text;
     private Date date;
 
+    public Post() {
+    }
+
     public Post(String url, String title, String text, Date date) {
         this.url = url;
         this.title = title;
         this.text = text;
         this.date = date;
+    }
+
+    public Post(int id, String url, String title, String text, Date date) {
+        this.id = id;
+        this.url = url;
+        this.title = title;
+        this.text = text;
+        this.date = date;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getUrl() {
