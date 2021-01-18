@@ -10,7 +10,7 @@ import java.util.Locale;
 public class SqlRuDateConvertor {
     private static final Locale LOCALE = new Locale("ru");
     private static final String[] SHORT_MONTHS = {
-            "янв", "фев", "мар", "апр", "май", "июн", "июл", "ауг", "сен", "окт", "ноя", "дек"
+            "янв", "фев", "мар", "апр", "май", "июн", "июл", "авг", "сен", "окт", "ноя", "дек"
     };
 
     public static Date convertor(String strDate) {
